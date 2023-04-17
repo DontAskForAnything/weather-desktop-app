@@ -1,6 +1,6 @@
 {
   "name": "weather-desktop-app",
-  "description": "Desktop weather app built with Vite, Vue.js, and Electron.js that uses OpenWeatherMap API.", 
+  "description": "Desktop weather app built with Vite, Vue.js, and Electron.js that uses OpenWeatherMap API.",
   "version": "0.0.0",
   "author": "DontAskForAnything",
   "private": true,
@@ -15,12 +15,14 @@
   "license": "MIT",
   "main": "backend/main.js",
   "scripts": {
-    "build": "npm run vite:build && npm run electron:build",
+    "build": "npm run lint && npm run vite:build && npm run electron:build",
     "electron:build": "electron-builder",
     "electron:dev": "set NODE_ENV=dev&& electron ./backend/main.js",
-    "production": "npm run vite:build && electron ./backend/main.js",
     "vite:build": "cd frontend && vite build --emptyOutDir",
-    "vite:dev": "cd frontend && vite"
+    "vite:dev": "cd frontend && vite",
+    "production": "npm run vite:build && electron ./backend/main.js",
+    "lint": "eslint . ",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "vue": "^3.2.47",
@@ -28,9 +30,12 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
-    "vite": "^4.1.3",
+    "electron": "^24.1.2",
     "electron-builder": "^23.6.0",
-    "electron": "^24.1.2"
+    "eslint": "^8.38.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-vue": "^9.11.0",
+    "vite": "^4.1.3"
   },
   "build": {
     "productName": "Weather App",

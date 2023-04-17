@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bolder {
+  font-weight: bold;
+  color: white;
+}
+
+#app {
+  background-color: #303030;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app-container {
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  width: 70vw;
+  display: flex;
+  max-width: 70rem;
+}
+
+#main-part {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  background-size: cover;
+  box-sizing: border-box;
+  padding: 5rem 5rem 1rem;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+#search-form {
+  position: absolute;
+  top:0;
+  left: 0;
+  margin:1rem;
+}
+
+#search-form button{
+  padding: 1rem;
+  background-color: transparent;
+  border:none;
+  color:white;
+  cursor: pointer;
+}
+
+#search-form input{
+  width: 10rem;
+  background-color: transparent;
+  border:none;
+  font-size: 1rem;
+  caret-color: white;
+  color:white;
+}
+
+#search-form input:focus{
+  outline: none;
+}
+
+#search-form input::placeholder{
+  color: white;
+}
+
+
+.current-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.current-info h1 {
+  font-size: 6.5rem;
+  font-weight: 600;
+}
+
+.current-info h2 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: 2rem;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.current-info h2 .location-coords {
+  opacity: 0.7;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.current-info h2 .location-coords i {
+  margin-right: 0.2rem;
+}
+
+.current-info div {
+  margin-left: 2rem;
+  text-align: center;
+}
+
+.current-info div img {
+  filter: saturate(3);
+  width: 5rem;
+  height: 5rem;
+}
+
+.current-info div p {
+  font-size: 1rem;
+}
+
+#forecast-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 12rem;
+  width: 100%;
+}
+
+#forecast-container .day {
+  color: white;
+  padding: 1rem;
+  margin-right: 1rem;
+  display: inline-block;
+  height: 9rem;
+  text-align: center;
+  width: 7rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(1px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#forecast-container .day h1 {
+  font-size: 1.1rem;
+}
+
+#forecast-container .day p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+}
+
+#forecast-container .day p i {
+  margin-left: 0.5rem;
+  font-size: 0.6rem;
+}
+
+#forecast-container .day img {
+  filter: saturate(3);
+  width: 6rem;
+  height: 6rem;
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3rem);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media only screen and (max-width: 1000px) {
+  #main-part {
+    justify-content: center;
+  }
+  .current-info {
+    flex-direction: column;
+  }
+  .current-info h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+  }
+  .current-info div {
+    margin: 0;
+  }
+  .current-info div img {
+    margin-top: 0;
+  }
+  .location-coords {
+    margin-top: 0.5rem;
+  }
+}
