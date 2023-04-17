@@ -57,11 +57,6 @@
     },
     "linux": {
       "target": "AppImage"
-    },
-    "publish": {
-      "provider": "github",
-      "owner": "DontAskForAnything",
-      "repo": "https://github.com/DontAskForAnything/weather-desktop-app"
     }
   }
 }
