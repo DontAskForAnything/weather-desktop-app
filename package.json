@@ -1,0 +1,62 @@
+{
+  "name": "weather-desktop-app",
+  "description": "Desktop weather app built with Vite, Vue.js, and Electron.js that uses OpenWeatherMap API.", 
+  "version": "0.0.0",
+  "author": "DontAskForAnything",
+  "private": true,
+  "keywords": [
+    "weather app",
+    "desktop",
+    "Vite",
+    "Vue.js",
+    "Electron.js",
+    "OpenWeatherMap API"
+  ],
+  "license": "MIT",
+  "main": "backend/main.js",
+  "scripts": {
+    "build": "npm run vite:build && npm run electron:build",
+    "electron:build": "electron-builder",
+    "electron:dev": "set NODE_ENV=dev&& electron ./backend/main.js",
+    "production": "npm run vite:build && electron ./backend/main.js",
+    "vite:build": "cd frontend && vite build --emptyOutDir",
+    "vite:dev": "cd frontend && vite"
+  },
+  "dependencies": {
+    "vue": "^3.2.47",
+    "vue-axios": "^3.5.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.1.3",
+    "electron-builder": "^23.6.0",
+    "electron": "^24.1.2"
+  },
+  "build": {
+    "productName": "Weather App",
+    "appId": "com.example.DontAskForAnything.weatherApp",
+    "icon": "icon.png",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "backend/**/*",
+      "frontend/dist/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "DontAskForAnything",
+      "repo": "https://github.com/DontAskForAnything/weather-desktop-app"
+    }
+  }
+}
