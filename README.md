@@ -1,5 +1,5 @@
 # Desktop Weather App
-<img src=".github/images/baner.png" alt="Showcase" />
+<img src=".github/images/Baner.png" alt="Showcase" />
 
 This is a **desktop weather app** built with [Vite](https://vitejs.dev/), [Vue](https://vuejs.org/), and [Electron](https://www.electronjs.org/) that uses the [OpenWeatherMap API](https://openweathermap.org/api) to display weather data. The app has a feature that **changes the background image** based on the time of day, and it **saves the last searched city** for convenience. It is built to work on all major platforms including **Mac, Linux, and Windows**.
 
